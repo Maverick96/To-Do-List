@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>To Do List</title>
+        <script src= "angular-1.6.5-min.js"></script>
+        <script src="newApp.js">        </script>
+        <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
+        <link rel="stylesheet"  href="index.css">
+    </head>
+
+    <body ng-app="myApp" ng-controller="myController">
+        <p>My To-Do List</p>
+        <!--Display number of tasks left-->
+        <p> {{getTask()}} </p>
+
+        <!--Accept Task Input-->
+        <div id="input">
+            Task : <input type="text" ng-model="task" placeholder = "Enter New Task" size="50">
+            <button type="submit" ng-click="addTask()">Add Task</button>
+            <br><br>
+        </div>
+
+        <!--Search for a particular task from list of tasks-->
+        <div id = "search">
+            Search : <input type="text" ng-model="searchTask" placeholder="Search Task Here" size="50">
+        </div>
+        <br>
+
+        <!--Display the entered tasks-->
+        <div id="show" ng-repeat="tassk in taskArray | filter : {toDo : searchTask} track by $index">
+            <input type="checkbox" id = "chc" ng-model = "tassk.done"> 
+            <span class="taskDone-{{tassk.done}}">{{tassk.toDo}} </span><br>
+        </div>
+        <br><br>
+
+        <!--Remove tasks which are checked-->
+        <div id="removeTask">
+            <button type="submit" ng-click="removeCompeletedTask()">Clear Completed Tasks</button>
+        </div>
+        <br><br>
+        <!--<div id = "clearLocalStorage">
+            <button type="submit" ng-click="clearStorage()">Clear Local Storage</button>
+        </div>-->
+    </body>
+</html>
