@@ -5,7 +5,7 @@ const router = express.Router();
 
 const pool = require('./connectToDb')
 
-router.get('/',(req,res,next) => {
+router.use('/',(req,res,next) => {
 
     pool.connect(function onConnect(err,client,release){
         if(err){

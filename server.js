@@ -10,9 +10,6 @@ app.listen('8081', () => {
 
 app.get('/', retrieve)
 
-// app.get('/' , function(req,res){
-//     res.sendFile(__dirname + '/home.html')
-// })
 app.post('/',postTask)
 
-app.use('/remove', removeTask)
+app.use('/RemoveTasks', removeTask)

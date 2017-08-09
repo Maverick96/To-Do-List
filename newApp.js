@@ -59,7 +59,7 @@ myApp.controller("myController", function ($scope, $filter, $http) {
 
        $scope.taskArray.forEach(function(task){
            if(task.done){
-               $http.post('http://localhost:8081/remove',task,config)
+               $http.post('http://localhost:8081/RemoveTasks',task,config)
              .then(function success(res){
                      console.log("Updated")
              },function error(res){

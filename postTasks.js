@@ -9,7 +9,7 @@ router.use(bodyParser.urlencoded({extended : true}));
 
 const pool = require('./connectToDb')
 
-router.post('/',(req,res) => {
+router.use('/',(req,res) => {
     console.log("In post")
     updateTable(req,res);
 })

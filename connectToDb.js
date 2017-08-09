@@ -1,6 +1,3 @@
-
-// returns a new Database connection
-
 const pool = require('pg').Pool;
 const config = {
     user : 'postgres',
