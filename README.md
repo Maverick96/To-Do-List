@@ -1,8 +1,6 @@
 # To-Do-List
 To-Do List using AngularJS and Node.js
 
-Each task is stored as an Object.Each object has a 'done' property, which indicates whether the task is completed or not.
-
 ## server.js :
 
 The requests are routed to their respective paths, the types of requests that are handled are :
